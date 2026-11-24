@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WanLearn | Learn it. Play it. Win it.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="">WanLearn</a><nav aria-label="Main"><ul><li><a class="link" href="index.html" aria-current="page">Home</a></li><li><a class="link" href="character.html">Character</a></li><li><a class="link" href="portfolio.html">Portfolio</a></li><li><a class="link" href="game.html">Game</a></li><li><a class="link" href="about.html">About Us</a></li></ul></nav></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="hero-text">
+<p class="greet">Welcome, <span class="player-name">player</span>!</p>
+<h1>Learn it.<br>Play it.<br><span>Win it.</span></h1>
+<p>Educational games that make learning fun. Pick a game, choose your hero and battle your way through every level.</p>
+<div class="btns"><a class="btn btn-red" href="game.html">Play Now</a><a class="btn btn-white" href="#explainer">Watch How</a></div>
+</div>
+<div class="hero-art">
+<img class="m1" src="assets/mascot.svg" alt="[Character A name], a WanLearn hero">
+<img class="m2" src="assets/mascot2.svg" alt="[Character B name], a WanLearn hero">
+</div>
+</div></section>
+
+<section class="steps"><div class="wrap">
+<h2>How it works</h2>
+<div class="grid">
+<div class="card c1"><span class="n">1</span><h3>Pick a game</h3><p>Choose from our collection of educational games in English, maths, science and more.</p></div>
+<div class="card c2"><span class="n">2</span><h3>Choose your hero</h3><p>Team up with one of our two characters and enter the game.</p></div>
+<div class="card c3"><span class="n">3</span><h3>Learn and win</h3><p>Spell, solve and answer to beat enemies, clear levels and score big.</p></div>
+</div></div></section>
+
+<section class="featured"><div class="wrap">
+<h2>Featured game</h2>
+<article class="feature">
+<div class="fthumb" aria-hidden="true">Aa</div>
+<div class="ftext">
+<p class="gtag">English</p>
+<h3>Word Dungeon</h3>
+<p>Spell real words to defeat dungeon monsters and clear every level. Long words hit hard, but made-up words backfire!</p>
+<div class="btns"><a class="btn btn-red btn-sm" href="word-dungeon.html">Play now</a><a class="btn btn-white btn-sm" href="game.html">See all games</a></div>
+<p class="soonline">Coming soon: maths, science and geography games.</p>
+</div>
+</article>
+</div></section>
+
+<section class="video" id="explainer"><div class="wrap">
+<h2>See WanLearn in action</h2>
+<!-- Replace this div with: <video controls src="assets/explainer.mp4"></video> -->
+<div class="screen"><p>Group explainer animation (45 to 60 seconds) goes here</p></div>
+</div></section>
+</main>
+<footer class="footer">WanLearn · Advanced Interactive Multimedia · Final Project</footer>
+
+<div class="wl-overlay" id="wl-overlay">
+  <div class="wl-modal" role="dialog" aria-modal="true" aria-labelledby="wl-title" aria-describedby="wl-text">
+
+    <!-- Placeholder mascot: replace with your own exported character image if you like -->
+    <svg class="wl-mascot" viewBox="0 0 280 250" role="img" aria-label="WanLearn mascot waving hello">
+      <rect x="55" y="140" width="32" height="62" rx="16" fill="#FFF7BD" stroke="#111111" stroke-width="8" transform="rotate(30 71 140)"/>
+      <circle cx="48" cy="130" r="12" fill="#FFF7BD" stroke="#111111" stroke-width="7"/>
+      <circle cx="232" cy="130" r="12" fill="#FFF7BD" stroke="#111111" stroke-width="7"/>
+      <circle cx="140" cy="120" r="95" fill="#FFF7BD" stroke="#111111" stroke-width="8"/>
+      <path d="M45 115 C45 40 100 20 140 20 C190 20 235 50 235 115 C200 95 175 75 150 62 C120 85 80 100 45 115 Z" fill="#111111"/>
+      <circle cx="105" cy="132" r="8" fill="#111111"/>
+      <circle cx="175" cy="132" r="8" fill="#111111"/>
+      <path d="M115 162 Q140 184 165 162" stroke="#111111" stroke-width="7" fill="none" stroke-linecap="round"/>
+    </svg>
+
+    <h2 class="wl-title" id="wl-title">Welcome to WanLearn!</h2>
+    <p class="wl-text" id="wl-text">Pick a nickname and get ready to learn, play and win.</p>
+
+    <label for="wl-name" style="position:absolute;left:-9999px">Your nickname</label>
+    <input class="wl-input" id="wl-name" type="text" maxlength="14" placeholder="Your nickname" autocomplete="off">
+    <p class="wl-error" id="wl-error" role="alert"></p>
+
+    <button class="wl-play" id="wl-play" type="button">Let's Play!</button>
+    <button class="wl-skip" id="wl-skip" type="button">Skip for now</button>
+  </div>
+</div>
+<script src="js/popup.js"></script>
+</body>
+</html>
