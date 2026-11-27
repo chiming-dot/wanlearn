@@ -34,6 +34,7 @@
   }
   requestAnimationFrame(updateBasket);
 
+  // Mouse move (Desktop)
   area.addEventListener('mousemove', function(e) {
     if (!gameActive) return;
     var rect = area.getBoundingClientRect();
@@ -42,6 +43,18 @@
     if (x > 95) x = 95;
     targetX = x;
   });
+
+  // Touch move (Mobile)
+  area.addEventListener('touchmove', function(e) {
+    if (!gameActive) return;
+    e.preventDefault(); // Stops the screen from scrolling
+    var rect = area.getBoundingClientRect();
+    var touch = e.touches[0]; // Get the first finger
+    var x = ((touch.clientX - rect.left) / rect.width) * 100;
+    if (x < 5) x = 5;
+    if (x > 95) x = 95;
+    targetX = x;
+  }, { passive: false }); // Required for preventDefault to work
 
   window.addEventListener('keydown', function(e) {
     if (!gameActive) return;

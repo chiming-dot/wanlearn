@@ -11,77 +11,91 @@
 </head>
 <body>
 <header class="nav"><div class="wrap"><a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="">WanLearn</a><button class="burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
-<nav id="site-menu" aria-label="Main"><ul><li><a class="link" href="index.html">Home</a></li><li><a class="link" href="character.html">Character</a></li><li><a class="link" href="portfolio.html">Portfolio</a></li><li><a class="link" href="game.html" aria-current="page">Game</a></li><li><a class="link" href="about.html">About Us</a></li></ul></nav></div></header>
+<nav id="site-menu" aria-label="Main"><ul><li><a class="link" href="index.html">Home</a></li><li><a class="link" href="character.html" aria-current="page">Character</a></li><li><a class="link" href="portfolio.html">Portfolio</a></li><li><a class="link" href="game.html">Game</a></li><li><a class="link" href="about.html">About Us</a></li></ul></nav></div></header>
 
-<main>
-<section class="page-head"><div class="wrap">
-<p class="crumb"><a href="game.html">&larr; All games</a></p>
-<h1>Word Dungeon</h1>
-<p class="banner">Spell real words to defeat dungeon monsters. Long words hit hard, but made-up words backfire!</p>
-</div></section>
+<main class="game wd-page">
+  <div class="wrap">
+    <!-- Compact Header -->
+    <div class="wd-header">
+      <p class="crumb" style="margin:0 0 8px;"><a href="game.html">&larr; All games</a></p>
+      <h1>Word Dungeon</h1>
+      <p class="banner" style="font-size:16px; padding:8px 16px;">Spell real words to defeat monsters. Long words hit hard, but fake words backfire!</p>
+    </div>
 
-<section class="game"><div class="wrap">
-<div class="arena" id="arena">
-  
-  <!-- START OVERLAY -->
-  <div class="overlay" id="start-screen" style="z-index: 100;">
-    <h2>Word Dungeon</h2>
-    <p>Spell real words to attack dungeon monsters. Long words hit harder!</p>
-    <button class="btn btn-red btn-sm" id="start-btn" type="button">Start Game</button>
-  </div>
+    <!-- Side-by-Side Layout -->
+    <div class="wd-layout">
+      
+      <!-- LEFT COLUMN: Arena and Stats -->
+      <div class="wd-left-col">
+        
+        <!-- Arena -->
+        <div class="arena" id="arena">
+          <div class="overlay" id="start-screen" style="z-index: 100;">
+            <h2>Word Dungeon</h2>
+            <p>Spell real words to attack dungeon monsters.</p>
+            <button class="btn btn-red btn-sm" id="start-btn" type="button">Start Game</button>
+          </div>
 
-  <div class="fighter me">
-    <p class="fname" id="nick">Player</p>
-    <div class="bar" id="hero-bar" role="progressbar" aria-label="Your health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="fill" id="hero-fill"></div></div>
-    <p class="hp"><span id="hero-hp">100</span> HP</p>
-    <img class="hero-img" id="hero-img" src="assets/mascot.svg" alt="Your WanLearn hero">
-    <button class="link-btn" id="change" type="button">Change hero</button>
-  </div>
-  
-  <div class="mid"><p class="vs">VS</p><p class="lvl" id="lvl">Level 1</p></div>
-  
-  <div class="fighter foe">
-    <p class="fname" id="foe-name">Enemy</p>
-    <div class="bar" id="foe-bar" role="progressbar" aria-label="Enemy health" aria-valuemin="0" aria-valuenow="0"><div class="fill" id="foe-fill"></div></div>
-    <p class="hp"><span id="foe-hp">0</span> HP</p>
-    <div class="monster" id="monster"></div>
-  </div>
-  
-  <div class="overlay" id="pick" hidden>
-    <h2>Choose your hero</h2>
-    <div class="hero-opts">
-      <button class="hero-opt" id="pick-0" type="button"><img src="assets/mascot.svg" alt=""><span>[Character A name]</span></button>
-      <button class="hero-opt" id="pick-1" type="button"><img src="assets/mascot2.svg" alt=""><span>[Character B name]</span></button>
+          <div class="fighter me">
+            <p class="fname" id="nick">Player</p>
+            <div class="bar" id="hero-bar" role="progressbar" aria-label="Your health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div class="fill" id="hero-fill"></div></div>
+            <p class="hp"><span id="hero-hp">100</span> HP</p>
+            <img class="hero-img" id="hero-img" src="assets/mascot.svg" alt="Your WanLearn hero">
+            <button class="link-btn" id="change" type="button">Change hero</button>
+          </div>
+          
+          <div class="mid"><p class="vs">VS</p><p class="lvl" id="lvl">Level 1</p></div>
+          
+          <div class="fighter foe">
+            <p class="fname" id="foe-name">Enemy</p>
+            <div class="bar" id="foe-bar" role="progressbar" aria-label="Enemy health" aria-valuemin="0" aria-valuenow="0"><div class="fill" id="foe-fill"></div></div>
+            <p class="hp"><span id="foe-hp">0</span> HP</p>
+            <div class="monster" id="monster"></div>
+          </div>
+          
+          <div class="overlay" id="pick" hidden>
+            <h2>Choose your hero</h2>
+            <div class="hero-opts">
+              <button class="hero-opt" id="pick-0" type="button"><img src="assets/mascot.svg" alt=""><span>[Character A name]</span></button>
+              <button class="hero-opt" id="pick-1" type="button"><img src="assets/mascot2.svg" alt=""><span>[Character B name]</span></button>
+            </div>
+          </div>
+          
+          <div class="overlay" id="overlay" hidden>
+            <h2 id="ov-title"></h2><p id="ov-text"></p>
+            <button class="btn btn-red btn-sm" id="ov-btn" type="button">Continue</button>
+          </div>
+        </div>
+
+        <!-- Stats Moved Here -->
+        <aside class="side">
+          <div style="display:flex; justify-content:space-between;">
+            <p class="stat">Score <span id="score">0</span></p>
+            <p class="stat">Words <span id="hidden">0</span></p>
+          </div>
+          <h2>Recent words</h2>
+          <ul class="found" id="found"><li class="none">None yet</li></ul>
+          <p class="tip">Tip: shuffling costs a turn, and fake words cost double damage.</p>
+        </aside>
+        
+      </div>
+
+      <!-- RIGHT COLUMN: Board -->
+      <div class="playfield">
+        <div class="board-panel">
+          <div class="word-display" id="word" aria-live="polite">Pick letters</div>
+          <div class="board" id="board" role="group" aria-label="Letter tiles"></div>
+          <div class="controls">
+            <button class="btn btn-red btn-sm" id="submit" type="button">Attack</button>
+            <button class="btn btn-white btn-sm" id="clear" type="button">Clear</button>
+            <button class="btn btn-white btn-sm" id="shuffle" type="button">New letters</button>
+          </div>
+          <p class="game-msg" id="msg" role="status"></p>
+        </div>
+      </div>
+
     </div>
   </div>
-  
-  <div class="overlay" id="overlay" hidden>
-    <h2 id="ov-title"></h2><p id="ov-text"></p>
-    <button class="btn btn-red btn-sm" id="ov-btn" type="button">Continue</button>
-  </div>
-</div>
-
-<div class="playfield">
-  <div class="board-panel">
-    <div class="word-display" id="word" aria-live="polite">Pick letters</div>
-    <div class="board" id="board" role="group" aria-label="Letter tiles"></div>
-    <div class="controls">
-      <button class="btn btn-red btn-sm" id="submit" type="button">Attack</button>
-      <button class="btn btn-white btn-sm" id="clear" type="button">Clear</button>
-      <button class="btn btn-white btn-sm" id="shuffle" type="button">New letters</button>
-    </div>
-    <p class="game-msg" id="msg" role="status"></p>
-  </div>
-  
-  <aside class="side">
-    <p class="stat">Score <span id="score">0</span></p>
-    <p class="stat">Words available <span id="hidden">0</span></p>
-    <h2>Recent words</h2>
-    <ul class="found" id="found"><li class="none">None yet</li></ul>
-    <p class="tip">Tip: new letters cost you a turn, and wrong words cost you double damage.</p>
-  </aside>
-</div>
-</div></section>
 </main>
 
 <footer class="footer">WanLearn · Advanced Interactive Multimedia · Final Project</footer>
