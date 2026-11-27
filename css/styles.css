@@ -199,3 +199,91 @@ a:focus-visible,button:focus-visible{outline:4px solid var(--yellow);outline-off
 .soonline{font-size:16px;opacity:.85}
 @media(max-width:700px){.hero .hero-art img{width:160px}.hero .hero-art .m2{width:140px;margin-left:-32px}.feature{grid-template-columns:1fr}.fthumb{border-right:0;border-bottom:4px solid var(--black);min-height:120px}}
 @media(prefers-reduced-motion:reduce){.hero .hero-art img{animation:none}}
+
+/* --- Game-Specific Additions --- */
+.math-options { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+.math-btn { font: 600 28px 'Bungee', sans-serif; padding: 20px; width: 100%; background: var(--white); border: 4px solid var(--black); border-radius: 16px; cursor: pointer; box-shadow: 0 6px 0 var(--black); transition: transform 0.1s; }
+.math-btn:hover { background: var(--yellow); }
+.math-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--black); }
+
+.memory-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.mem-card { aspect-ratio: 1; background: var(--navy); color: var(--white); border: 4px solid var(--black); border-radius: 16px; font: 24px 'Bungee', sans-serif; cursor: pointer; display: grid; place-items: center; box-shadow: 0 6px 0 var(--black); transition: transform 0.1s, background 0.2s; }
+.mem-card.flipped { background: var(--yellow); color: var(--navy); }
+.mem-card.matched { background: var(--mint); color: var(--navy); cursor: default; box-shadow: none; transform: translateY(6px); }
+
+.geo-question { font-size: 24px; font-weight: 600; text-align: center; margin-bottom: 24px; }
+.geo-options { display: flex; flex-direction: column; gap: 12px; }
+
+/* --- Math Meteor --- */
+.meteor-area { position: relative; width: 100%; height: 300px; background: #0C1344; border-radius: 16px; overflow: hidden; margin-bottom: 20px; border: 4px solid var(--black); }
+.equation { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); color: var(--white); font: 32px 'Bungee', sans-serif; text-shadow: 2px 2px 0 var(--black); z-index: 10; }
+.meteor { position: absolute; width: 60px; height: 60px; background: var(--orange); border: 4px solid var(--black); border-radius: 50%; display: grid; place-items: center; font: 24px 'Bungee', sans-serif; color: var(--navy); cursor: pointer; box-shadow: inset -4px -4px 0 rgba(0,0,0,0.2); }
+@keyframes fall { to { top: 100%; } }
+
+/* --- Biome Blitz --- */
+.biome-area {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: #8CC8F5; /* Sky blue */
+  border: 4px solid var(--black);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+.biome-item {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background: var(--white);
+  border: 4px solid var(--black);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 36px;
+  box-shadow: 0 4px 0 var(--black);
+  cursor: default;
+}
+
+@keyframes fall-biome {
+  to { top: 100%; }
+}
+
+.biome-bins {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--navy);
+  padding: 12px;
+  border: 4px solid var(--black);
+  border-radius: 0 0 16px 16px;
+}
+
+.bin-btn {
+  padding: 16px 8px;
+  background: var(--cream);
+  border: 4px solid var(--black);
+  border-radius: 12px;
+  font: 600 18px 'Fredoka', sans-serif;
+  color: var(--navy);
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--black);
+  transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bin-btn span { font-size: 32px; }
+.bin-btn:hover { background: var(--yellow); }
+.bin-btn:active { transform: translateY(4px); box-shadow: 0 0 0 var(--black); }
+.bin-btn.correct { background: #7FD6A4; }
+.bin-btn.wrong { background: #FF5A64; }
+
+/* --- Capital Catch --- */
+.catch-area { position: relative; width: 100%; height: 350px; background: #8CC8F5; border: 4px solid var(--black); border-radius: 16px; overflow: hidden; margin-bottom: 20px; }
+.player-basket { position: absolute; bottom: 10px; width: 80px; height: 50px; background: var(--navy); border: 4px solid var(--black); border-radius: 10px 10px 0 0; display: grid; place-items: center; font-size: 24px; transition: left 0.1s; z-index: 10; }
+.falling-city { position: absolute; padding: 8px 16px; background: var(--white); border: 3px solid var(--black); border-radius: 999px; font-weight: 600; font-size: 18px; color: var(--navy); }
+@keyframes drop { to { top: 100%; } }

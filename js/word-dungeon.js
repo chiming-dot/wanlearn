@@ -21,10 +21,10 @@
     { src: 'assets/mascot2.svg', n: '[Character B name]' }
   ];
   var HERO_MAX = 100;
-  var PUNISH = 2; // enemy damage multiplier when the player spells a word that does not exist
+  var PUNISH = 2;
 
   var board = [], path = [], tiles = [], score = 0, recent = [];
-  var lvl = 0, idx = 0, heroHp = HERO_MAX, foeHp = 0, foe = null, busy = false, onContinue = null;
+  var lvl = 0, idx = 0, heroHp = HERO_MAX, foeHp = 0, foe = null, busy = true, onContinue = null;
 
   function $(id) { return document.getElementById(id); }
   var wordEl = $('word'), msgEl = $('msg'), foundEl = $('found'), overlay = $('overlay');
@@ -38,7 +38,6 @@
   function currentWord() { return path.map(function (i) { return board[i]; }).join(''); }
   function msg(t) { msgEl.textContent = t; }
 
-  // How many dictionary words can be spelled from the 16 tiles (any order).
   function countWords() {
     var have = [], i, c = 0;
     for (i = 0; i < 26; i++) { have.push(0); }
@@ -66,7 +65,6 @@
     paint();
   }
 
-  // After a word is used, only its tiles get fresh letters.
   function refillUsed() {
     var tries = 0, count = 0;
     do {
@@ -101,7 +99,6 @@
     wordEl.textContent = currentWord() || 'Pick letters';
   }
 
-  // Any tile can be picked in any order; picking a chosen tile removes it.
   function toggle(i) {
     if (busy) { return; }
     var at = path.indexOf(i);
@@ -171,7 +168,6 @@
     msg('A ' + foe.n + ' appears! Spell a word to attack.');
   }
 
-  // The enemy strikes back. note is shown with the damage.
   function enemyTurn(mult, note) {
     busy = true;
     var dmg = foe.atk * mult;
@@ -231,7 +227,6 @@
     }
   }
 
-  // Keyboard play: type letters, Backspace to undo, Enter to attack, Escape to clear.
   document.addEventListener('keydown', function (e) {
     if (busy || !overlay.hidden || e.ctrlKey || e.metaKey || e.altKey) { return; }
     var k = e.key;
@@ -250,7 +245,6 @@
   });
   $('ov-btn').addEventListener('click', function () { if (onContinue) { onContinue(); } });
 
-  // Hero selection: the choice is remembered between visits.
   var pickEl = $('pick');
   function applyHero(i) {
     $('hero-img').src = HEROES[i].src;
@@ -272,9 +266,23 @@
   $('pick-1').addEventListener('click', function () { choose(1); });
   $('change').addEventListener('click', function () { if (!busy) { showPick(); } });
 
+  // --- NEW INITIALIZATION LOGIC ---
+  var startBtn = $('start-btn');
+  var startScreen = $('start-screen');
+
+  startBtn.addEventListener('click', function() {
+    startScreen.hidden = true;
+    startLevel();
+    
+    var saved = null;
+    try { saved = localStorage.getItem('wlHero'); } catch (e) {}
+    
+    if (saved === '0' || saved === '1') { 
+      applyHero(Number(saved)); 
+    } else { 
+      showPick(); 
+    }
+  });
+
   buildTiles();
-  startLevel();
-  var saved = null;
-  try { saved = localStorage.getItem('wlHero'); } catch (e) {}
-  if (saved === '0' || saved === '1') { applyHero(Number(saved)); } else { showPick(); }
 })();

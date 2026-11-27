@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Meteor | WanLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="">WanLearn</a><nav aria-label="Main"><ul><li><a class="link" href="index.html">Home</a></li><li><a class="link" href="character.html">Character</a></li><li><a class="link" href="portfolio.html">Portfolio</a></li><li><a class="link" href="game.html" aria-current="page">Game</a></li><li><a class="link" href="about.html">About Us</a></li></ul></nav></div></header>
+<main>
+<section class="page-head"><div class="wrap">
+<p class="crumb"><a href="game.html">&larr; All games</a></p>
+<h1>Math Meteor</h1>
+<p class="banner">Click the asteroid that holds the correct answer. If they hit the bottom, your ship takes damage!</p>
+</div></section>
+<section class="game"><div class="wrap">
+<div class="playfield">
+  <div class="board-panel">
+    <div class="meteor-area" id="meteor-area">
+      <div class="equation" id="equation">Ready?</div>
+      
+      <!-- START OVERLAY -->
+      <div class="overlay" id="start-screen" style="border-radius: 12px; z-index: 100;">
+        <h2>Math Meteor</h2>
+        <p>Click the meteor with the correct answer before it hits the ship!</p>
+        <button class="btn btn-red btn-sm" id="start-btn" type="button">Start Game</button>
+      </div>
+    </div>
+    <p class="game-msg" id="msg" style="text-align:center;"></p>
+  </div>
+  <aside class="side">
+    <h2>Ship Status</h2>
+    <p class="stat">Score <span id="score">0</span></p>
+    <p class="stat">Hull HP <span id="hp" style="color:#7FD6A4">100</span></p>
+    
+    <button class="btn btn-white btn-sm" id="mode-toggle" style="width:100%; margin-top:20px; font-size:16px;" type="button">Mode: Easy</button>
+    <button class="btn btn-white btn-sm" id="restart" style="width:100%; margin-top:10px;" type="button">Restart</button>
+  </aside>
+</div>
+</div></section>
+</main>
+<footer class="footer">WanLearn · Advanced Interactive Multimedia · Final Project</footer>
+<script src="js/maths-game.js"></script>
+</body>
+</html>

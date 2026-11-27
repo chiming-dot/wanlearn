@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biome Blitz | WanLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="">WanLearn</a><nav aria-label="Main"><ul><li><a class="link" href="index.html">Home</a></li><li><a class="link" href="character.html">Character</a></li><li><a class="link" href="portfolio.html">Portfolio</a></li><li><a class="link" href="game.html" aria-current="page">Game</a></li><li><a class="link" href="about.html">About Us</a></li></ul></nav></div></header>
+<main>
+<section class="page-head"><div class="wrap">
+<p class="crumb"><a href="game.html">&larr; All games</a></p>
+<h1>Biome Blitz</h1>
+<p class="banner">Click the correct habitat bin to sort the falling animal. Act fast, or it hits the ground!</p>
+</div></section>
+
+<section class="game"><div class="wrap">
+<div class="playfield" style="max-width: 700px; margin: 0 auto;">
+  <div class="board-panel" style="padding-bottom: 0;">
+    
+    <div class="biome-area" id="biome-area">
+      <!-- START OVERLAY -->
+      <div class="overlay" id="start-screen" style="border-radius: 12px; z-index: 100;">
+        <h2>Biome Blitz</h2>
+        <p>Click the correct habitat at the bottom to sort the falling animal. Don't let them hit the ground!</p>
+        <button class="btn btn-red btn-sm" id="start-btn" type="button">Start Game</button>
+      </div>
+    </div>
+    
+    <div class="biome-bins">
+      <button class="bin-btn" data-bin="forest"><span>🌲</span> Forest</button>
+      <button class="bin-btn" data-bin="desert"><span>🏜️</span> Desert</button>
+      <button class="bin-btn" data-bin="ocean"><span>🌊</span> Ocean</button>
+    </div>
+
+    <p class="game-msg" id="msg" style="text-align:center; margin-top:16px; font-size:20px;">Get ready!</p>
+  </div>
+
+  <aside class="side" style="margin-top: 24px;">
+    <div style="display:flex; justify-content:space-between; align-items: flex-start;">
+      <div>
+        <p class="stat">Score <span id="score">0</span></p>
+        <p class="stat">Combo <span id="combo">1x</span></p>
+        <p class="stat">Eco HP <span id="hp" style="color:#7FD6A4">100</span></p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button class="btn btn-white btn-sm" id="mode-toggle" style="font-size:16px;" type="button">Mode: Normal</button>
+        <button class="btn btn-white btn-sm" id="restart" type="button">Restart</button>
+      </div>
+    </div>
+  </aside>
+</div>
+</div></section>
+</main>
+<footer class="footer">WanLearn · Advanced Interactive Multimedia · Final Project</footer>
+<script src="js/science-game.js"></script>
+</body>
+</html>

@@ -10,64 +10,96 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<header class="nav"><div class="wrap"><a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="">WanLearn</a><nav aria-label="Main"><ul><li><a class="link" href="index.html">Home</a></li><li><a class="link" href="character.html">Character</a></li><li><a class="link" href="portfolio.html">Portfolio</a></li><li><a class="link" href="game.html" aria-current="page">Game</a></li><li><a class="link" href="about.html">About Us</a></li></ul></nav></div></header>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo" src="assets/logo.png" alt="">WanLearn</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a class="link" href="index.html">Home</a></li>
+        <li><a class="link" href="character.html">Character</a></li>
+        <li><a class="link" href="portfolio.html">Portfolio</a></li>
+        <li><a class="link" href="game.html" aria-current="page">Game</a></li>
+        <li><a class="link" href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="page-head"><div class="wrap">
-<h1>Choose a game</h1>
-<p>Every WanLearn game teaches something new. Pick one and start playing.</p>
-</div></section>
-<section class="library"><div class="wrap">
-<div class="filters" role="group" aria-label="Filter games by subject">
-<button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
-<button class="chip" type="button" data-filter="english" aria-pressed="false">English</button>
-<button class="chip" type="button" data-filter="maths" aria-pressed="false">Maths</button>
-<button class="chip" type="button" data-filter="science" aria-pressed="false">Science</button>
-<button class="chip" type="button" data-filter="geography" aria-pressed="false">Geography</button>
-</div>
-<div class="gcards">
-<article class="gcard gc-eng" data-subject="english">
-<div class="gthumb" aria-hidden="true">Aa</div>
-<div class="gbody">
-<p class="gtag">English</p>
-<h2>Word Dungeon</h2>
-<p>Spell real words to defeat dungeon monsters. Long words hit hard, but made-up words backfire!</p>
-<p class="gskills"><strong>Learn:</strong> Spelling, vocabulary</p>
-<a class="btn btn-red btn-sm" href="word-dungeon.html">Play</a>
-</div>
-</article>
-<article class="gcard gc-math" data-subject="maths">
-<div class="gthumb" aria-hidden="true">123</div>
-<div class="gbody">
-<p class="gtag">Maths</p>
-<h2>[Maths game name]</h2>
-<p>[One or two sentences about how this maths game works.]</p>
-<p class="gskills"><strong>Learn:</strong> [Skill one], [skill two]</p>
-<span class="soon">Coming soon</span>
-</div>
-</article>
-<article class="gcard gc-sci" data-subject="science">
-<div class="gthumb" aria-hidden="true">H2O</div>
-<div class="gbody">
-<p class="gtag">Science</p>
-<h2>[Science game name]</h2>
-<p>[One or two sentences about how this science game works.]</p>
-<p class="gskills"><strong>Learn:</strong> [Skill one], [skill two]</p>
-<span class="soon">Coming soon</span>
-</div>
-</article>
-<article class="gcard gc-geo" data-subject="geography">
-<div class="gthumb" aria-hidden="true">Map</div>
-<div class="gbody">
-<p class="gtag">Geography</p>
-<h2>[Geography game name]</h2>
-<p>[One or two sentences about how this geography game works.]</p>
-<p class="gskills"><strong>Learn:</strong> [Skill one], [skill two]</p>
-<span class="soon">Coming soon</span>
-</div>
-</article>
-</div>
-</div></section>
+  <section class="page-head">
+    <div class="wrap">
+      <h1>Choose a game</h1>
+      <p>Every WanLearn game teaches something new. Pick one and start playing.</p>
+    </div>
+  </section>
+
+  <section class="library">
+    <div class="wrap">
+      <!-- Subject Filters -->
+      <div class="filters" role="group" aria-label="Filter games by subject">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="english" aria-pressed="false">English</button>
+        <button class="chip" type="button" data-filter="maths" aria-pressed="false">Maths</button>
+        <button class="chip" type="button" data-filter="science" aria-pressed="false">Science</button>
+        <button class="chip" type="button" data-filter="geography" aria-pressed="false">Geography</button>
+      </div>
+
+      <!-- Game Cards -->
+      <div class="gcards">
+        
+        <!-- ENGLISH GAME -->
+        <article class="gcard gc-eng" data-subject="english">
+          <div class="gthumb" aria-hidden="true">Aa</div>
+          <div class="gbody">
+            <p class="gtag">English</p>
+            <h2>Word Dungeon</h2>
+            <p>Spell real words to defeat dungeon monsters. Long words hit hard, but made-up words backfire!</p>
+            <p class="gskills"><strong>Learn:</strong> Spelling, vocabulary</p>
+            <a class="btn btn-red btn-sm" href="word-dungeon.html">Play</a>
+          </div>
+        </article>
+
+        <!-- MATHS GAME -->
+        <article class="gcard gc-math" data-subject="maths">
+          <div class="gthumb" aria-hidden="true">1+2-3</div>
+          <div class="gbody">
+            <p class="gtag">Maths</p>
+            <h2>Math Meteor</h2>
+            <p>Click the asteroid that holds the correct answer. If they hit the bottom, your ship takes damage!</p>
+            <p class="gskills"><strong>Learn:</strong> Addition, subtraction, mental math</p>
+            <a class="btn btn-red btn-sm" href="maths-game.html">Play</a>
+          </div>
+        </article>
+
+        <!-- SCIENCE GAME (UPDATED) -->
+        <article class="gcard gc-sci" data-subject="science">
+          <div class="gthumb" aria-hidden="true">🌍</div>
+          <div class="gbody">
+            <p class="gtag">Science</p>
+            <h2>Biome Blitz</h2>
+            <p>Sort falling animals into their correct habitats (Forest, Desert, Ocean). Act fast before they hit the ground!</p>
+            <p class="gskills"><strong>Learn:</strong> Biology, ecosystems, reflexes</p>
+            <a class="btn btn-red btn-sm" href="science-game.html">Play</a>
+          </div>
+        </article>
+
+        <!-- GEOGRAPHY GAME -->
+        <article class="gcard gc-geo" data-subject="geography">
+          <div class="gthumb" aria-hidden="true">Map</div>
+          <div class="gbody">
+            <p class="gtag">Geography</p>
+            <h2>Capital Catch</h2>
+            <p>Use your mouse or Arrow Keys to catch the correct capital city. Let the wrong ones fall!</p>
+            <p class="gskills"><strong>Learn:</strong> World capitals, geography, reflexes</p>
+            <a class="btn btn-red btn-sm" href="geography-game.html">Play</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer class="footer">WanLearn · Advanced Interactive Multimedia · Final Project</footer>
 <script src="js/games.js"></script>
 </body>
